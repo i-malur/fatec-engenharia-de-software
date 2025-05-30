@@ -74,7 +74,7 @@ Este projeto é totalmente front-end, o que significa que você não precisa de 
 
 2.  **Navegue até a pasta do projeto:**
     ```bash
-    cd saudeon-repo
+    cd saudeOn-repo
     ```
 
 3.  **Abra o arquivo `index.html`:**
