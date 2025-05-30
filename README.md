@@ -51,6 +51,18 @@ A dashboard se adapta para exibir as opções relevantes para cada tipo de usuá
 ![Font Awesome](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 
+## 🗺️ Estrutura do Projeto
+
+Abaixo está a estrutura de diretórios do repositório, que organiza os arquivos e recursos do projeto:
+saudeOn-repo/  
+├── img/                       # Pasta para recursos de imagem  
+│   ├── icon-site.jpg          # Favicon ou ícone do site (usado na aba do navegador)  
+│   ├── logotipoV1.jpg         # Versão 1 do logotipo  
+│   └── logotipoV2.jpg         # Versão 2 do logotipo  
+├── script.js                  # Lógica de interatividade e simulação de dados  
+├── style.css                  # Estilos e design da interface  
+└── index.html                 # Estrutura principal da página  
+
 ## ⚙️ Como Rodar o Projeto
 
 Este projeto é totalmente front-end, o que significa que você não precisa de um servidor complexo para executá-lo.
