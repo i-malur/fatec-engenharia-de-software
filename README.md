@@ -53,7 +53,7 @@ A dashboard se adapta para exibir as opções relevantes para cada tipo de usuá
 
 ## 🗺️ Estrutura do Projeto
 
-Abaixo está a estrutura de diretórios do repositório, que organiza os arquivos e recursos do projeto:
+Abaixo está a estrutura de diretórios do repositório, que organiza os arquivos e recursos do projeto:  
 saudeOn-repo/  
 ├── img/                       # Pasta para recursos de imagem  
 │   ├── icon-site.jpg          # Favicon ou ícone do site (usado na aba do navegador)  
