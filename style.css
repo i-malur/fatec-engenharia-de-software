@@ -1,0 +1,700 @@
+/* Importação de Fontes e Ícones (FontAwesome) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Variáveis de Cores da Paleta "VitaLink Saúde" */
+:root {
+    --primary-color: #2A9D8F; /* Verde-azulado */
+    --primary-dark: #217C73; /* Mais escuro para hover */
+    --secondary-color: #4A606A; /* Chumbo/Azul Marinho Escuro */
+    --accent-color: #F4A261; /* Laranja vibrante para destaque */
+    --accent-dark: #E08A4D; /* Laranja mais escuro para hover */
+    --background-light: #F0F4F8; /* Fundo geral, leve e moderna */
+    --text-color: #333333; /* Texto escuro */
+    --border-color: #DDE2E7; /* Borda suave */
+    --card-background: #FFFFFF;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --success-bg: #D4EDDA; /* Verde suave de sucesso */
+    --success-text: #155724;
+    --error-bg: #F8D7DA; /* Vermelho sutil de erro */
+    --error-text: #721c24;
+    --info-color: #5D9CEC; /* Azul claro para info/links */
+    --info-dark: #4A8ED8;
+    --validation-error-color: #D62828; /* Vermelho mais forte para erros de validação */
+}
+
+/* Reset Básico e Fontes */
+body {
+    font-family: 'Open Sans', sans-serif; /* Fonte para o corpo do texto */
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Layout Geral */
+.container {
+    max-width: 1000px; /* Ligeiramente mais largo */
+    margin: 0 auto;
+    padding: 0 20px; /* Mais padding nas laterais */
+}
+
+/* Header */
+.app-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.8rem 0; /* Um pouco maior */
+    box-shadow: 0 4px 10px var(--shadow-light);
+    text-align: center;
+    border-bottom: 5px solid var(--accent-color); /* Detalhe na borda inferior */
+}
+
+.app-header .logo {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Fonte de destaque para o logo */
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+#main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px; /* Espaçamento maior entre os itens */
+}
+
+#main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px; /* Cantos mais arredondados */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: 600; /* Mais negrito */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
+}
+
+#main-nav ul li a:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px); /* Efeito de elevação sutil */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Main Content Area */
+.app-main {
+    flex-grow: 1;
+    padding: 40px 0; /* Mais espaçamento superior/inferior */
+}
+
+/* Cards (Seções de Conteúdo) */
+.card {
+    background-color: var(--card-background);
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 6px 18px var(--shadow-light); /* Sombra mais pronunciada mas suave */
+    padding: 40px; /* Mais padding interno */
+    margin-bottom: 40px; /* Espaço entre as seções */
+    border: 1px solid var(--border-color); /* Borda sutil */
+}
+
+/* Card Footer Actions (for login/register links) */
+.card-footer-action {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+.card-footer-action p {
+    margin: 0;
+    color: var(--secondary-color);
+}
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+.btn-text:hover {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+
+/* Headings */
+h2 {
+    font-family: 'Montserrat', sans-serif; /* Fonte de destaque */
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2rem; /* Tamanho maior */
+    position: relative;
+    padding-bottom: 10px; /* Espaço para o underline */
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px; /* Largura do underline */
+    height: 4px; /* Espessura do underline */
+    background-color: var(--accent-color); /* Cor do underline */
+    border-radius: 2px;
+}
+
+/* Sub-headings for address block */
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color);
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+
+/* Formulários */
+.form-style {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Mais espaçamento entre os campos */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-group {
+    position: relative; /* Para posicionar o small de hint */
+}
+
+.input-group label {
+    margin-bottom: 10px;
+    font-weight: 600; /* Mais negrito */
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    display: block; /* Garante que a label ocupe toda a largura */
+}
+
+.input-style,
+.select-style,
+.textarea-style {
+    padding: 16px; /* Mais padding para caixas maiores */
+    border: 1px solid var(--border-color);
+    border-radius: 10px; /* Cantos mais arredondados */
+    font-size: 1.05rem; /* Fonte ligeiramente maior */
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #FDFDFD; /* Fundo levemente off-white */
+}
+
+.input-style:focus,
+.select-style:focus,
+.textarea-style:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.2); /* Sombra de foco mais proeminente */
+    outline: none;
+}
+
+/* Estilo para inputs com erro de validação */
+.input-style.error,
+.select-style.error,
+.textarea-style.error {
+    border-color: var(--validation-error-color);
+    box-shadow: 0 0 0 4px rgba(214, 40, 40, 0.2);
+}
+
+.input-validation-error {
+    color: var(--validation-error-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    margin-bottom: 0;
+    display: block; /* Garante que ocupa a linha */
+}
+
+
+.textarea-style {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Botões */
+.btn {
+    padding: 14px 25px; /* Mais padding */
+    border: none;
+    border-radius: 8px; /* Cantos mais arredondados */
+    cursor: pointer;
+    font-size: 1.05rem; /* Levemente maior */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(42, 157, 143, 0.25);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #3C4D56; /* Mais escuro */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(74, 96, 106, 0.25);
+}
+
+.btn-info {
+    background-color: var(--info-color);
+    color: white;
+}
+.btn-info:hover {
+    background-color: var(--info-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(93, 156, 236, 0.25);
+}
+
+.btn-success {
+    background-color: var(--accent-color); /* Usa a cor de destaque para sucesso */
+    color: white;
+}
+.btn-success:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(244, 162, 97, 0.25);
+}
+
+
+/* Botões pequenos para listas */
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transform: none !important; /* Anula transform original */
+    box-shadow: none !important; /* Anula sombra original */
+}
+.btn-small:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+
+/* Mensagens de Feedback */
+.message {
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.error-message {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid var(--error-text);
+}
+
+.success-message {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid var(--success-text);
+}
+
+.text-muted {
+    color: var(--secondary-color);
+    font-size: 0.95em;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Adjust text-muted for smaller text below input fields */
+.input-group .text-muted {
+    font-size: 0.8rem;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+#username-hint { /* Specific hint for login username */
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+
+.mt-2 {
+    margin-top: 1.5rem;
+}
+
+/* Classes de Visibilidade */
+.hidden-section {
+    display: none;
+}
+
+.active-section {
+    display: block;
+}
+
+/* Dashboards (Grids de Opções) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Botões maiores */
+    gap: 30px; /* Mais espaçamento */
+    margin-top: 30px;
+}
+
+.btn-option {
+    background-color: var(--primary-color); /* Cor principal para opções */
+    color: white;
+    padding: 30px; /* Mais padding */
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px; /* Altura mínima maior */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-option:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-8px); /* Efeito de elevação mais notável */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Ícones para botões de opção (FontAwesome) */
+.btn-option i {
+    font-size: 3.5rem; /* Ícones maiores */
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9); /* Branco sutilmente transparente */
+}
+
+/* Listas de Conteúdo */
+.list-container {
+    margin-top: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    max-height: 450px; /* Altura máxima para rolagem */
+    overflow-y: auto;
+    background-color: var(--card-background);
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.03); /* Sombra interna sutil */
+}
+
+.list-item {
+    padding: 18px 25px; /* Mais padding */
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Mais espaçamento */
+    transition: background-color 0.2s ease;
+}
+
+.list-item:hover {
+    background-color: #F8FCFF; /* Efeito hover suave */
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item strong {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.list-item div {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Small list item for prontuario */
+.list-item-small {
+    padding: 8px 15px;
+    border-bottom: 1px dotted var(--border-color); /* Borda pontilhada */
+    font-size: 0.9rem;
+}
+.list-item-small:last-child {
+    border-bottom: none;
+}
+
+
+/* Status Badges */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.status.agendada {
+    background-color: #FFEDCC;
+    color: #FFA500;
+}
+.status.concluida {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+.status.cancelada {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+}
+.status.pendente {
+    background-color: #CCE7F0;
+    color: #3498DB;
+}
+.status.resolvida {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+
+
+/* Chat de Suporte */
+.chat-container {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    background-color: var(--card-background);
+    max-width: 700px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* Altura maior */
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.message {
+    padding: 12px 18px;
+    border-radius: 20px; /* Mais arredondado */
+    max-width: 75%; /* Um pouco mais largo */
+    word-wrap: break-word;
+    font-size: 0.98rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.user-message {
+    background-color: var(--primary-color);
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 8px; /* Corner styling for chat bubbles */
+}
+
+.bot-message {
+    background-color: #E2F0F7; /* Um azul mais claro para o bot */
+    color: var(--secondary-color);
+    align-self: flex-start;
+    margin-right: auto;
+    border-bottom-left-radius: 8px;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 15px; /* Mais espaçamento */
+}
+
+.chat-input-area input {
+    flex-grow: 1;
+}
+
+.chat-input-area button {
+    padding: 12px 25px; /* Mais padding */
+    font-size: 1rem;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+}
+
+/* Footer */
+.app-footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem 0; /* Mais padding */
+    text-align: center;
+    margin-top: auto;
+    font-size: 0.9rem;
+    letter-spacing: 0.2px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .app-header {
+        padding: 1.2rem 0;
+    }
+    .app-header .logo {
+        font-size: 1.8rem;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 15px;
+    }
+    #main-nav ul li a {
+        padding: 8px 15px;
+    }
+
+    .app-main {
+        padding: 25px 0;
+    }
+
+    .card {
+        padding: 25px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    h3 {
+        font-size: 1.3rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .form-style {
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .input-group label {
+        margin-bottom: 8px;
+    }
+
+    .input-style,
+    .select-style,
+    .textarea-style {
+        padding: 12px;
+        font-size: 1rem; /* Ajusta fonte em telas menores */
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .btn-option {
+        padding: 25px;
+        min-height: 120px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+    }
+
+    .btn-option i {
+        font-size: 3rem;
+        margin-bottom: 12px;
+    }
+
+    .list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+    .list-item button {
+        width: 100%;
+    }
+
+    .chat-container {
+        height: 400px;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .chat-messages {
+        padding: 10px;
+    }
+
+    .message {
+        padding: 10px 15px;
+        border-radius: 18px;
+        max-width: 85%; /* Ajuste para mobile */
+    }
+
+    .chat-input-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .chat-input-area button {
+        width: 100%;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .search-bar button {
+        width: 100%;
+    }
+
+    .card-footer-action .btn-text {
+        font-size: 0.9rem;
+    }
+    .input-group .text-muted {
+        font-size: 0.75rem; /* Ajusta o tamanho da fonte da dica em telas menores */
+    }
+}

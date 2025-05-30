@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeOn - Seu Portal Completo</title> <link rel="icon" href="img/icon-site.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/icon-site.jpg"" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="container">
+            <h1 class="logo">SaúdeOn</h1>
+            <nav id="main-nav">
+                </nav>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div class="container">
+            <section id="login-section" class="active-section card">
+                <h2>Acesso ao Sistema</h2>
+                <form id="login-form" class="form-style">
+                    <div class="input-group">
+                        <label for="username" id="username-label">Usuário:</label>
+                        <input type="text" id="username" name="username" required class="input-style" value="">
+                        <small id="username-hint" class="text-muted text-center"></small>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required class="input-style" value="">
+                    </div>
+                    <div class="input-group">
+                        <label for="role-select">Entrar como:</label>
+                        <select id="role-select" name="role" class="select-style">
+                            <option value="paciente" selected>Paciente</option>
+                            <option value="medico">Médico</option>
+                            <option value="administrador">Administrador</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <p id="login-message" class="message error-message"></p>
+                </form>
+                <div class="card-footer-action">
+                    <p>Não tem uma conta? <button type="button" class="btn btn-text" id="show-register-form-btn" data-role="paciente">Cadastre-se como Paciente</button></p>
+                </div>
+            </section>
+
+            <section id="register-section" class="hidden-section screen-section card">
+                <h2>Cadastro de Novo Usuário</h2>
+                <form id="register-form" class="form-style">
+                    <div class="input-group">
+                        <label for="register-role-select">Tipo de Usuário:</label>
+                        <select id="register-role-select" name="role" class="select-style">
+                            <option value="paciente" selected>Paciente</option>
+                            <option value="medico">Médico</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-name">Nome Completo:</label>
+                        <input type="text" id="register-name" name="name" required class="input-style" placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="input-group" id="register-cpf-group">
+                        <label for="register-cpf">CPF:</label>
+                        <input type="text" id="register-cpf" name="cpf" required class="input-style" placeholder="Ex: 123.456.789-00" maxlength="14">
+                        <p id="cpf-error" class="input-validation-error"></p>
+                    </div>
+
+                    <div class="input-group" id="register-crm-group" style="display: none;">
+                        <label for="register-crm">CRM:</label>
+                        <input type="text" id="register-crm" name="crm" class="input-style" placeholder="Ex: 123456/SP">
+                        <p id="crm-error" class="input-validation-error"></p>
+                    </div>
+
+                    <div class="input-group" id="register-specialty-group" style="display: none;">
+                        <label for="register-specialty">Especialidade:</label>
+                        <select id="register-specialty" name="specialty" class="select-style">
+                            <option value="">Selecione</option>
+                            <option value="clinica">Clínica Geral</option>
+                            <option value="pediatria">Pediatria</option>
+                            <option value="cardiologia">Cardiologia</option>
+                            <option value="dermatologia">Dermatologia</option>
+                            </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" name="email" required class="input-style" placeholder="seu.email@exemplo.com">
+                        <p id="email-error" class="input-validation-error"></p>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-password">Senha:</label>
+                        <input type="password" id="register-password" name="password" required class="input-style" placeholder="********">
+                        <p id="password-error" class="input-validation-error"></p>
+                        <small class="text-muted">Mínimo 8 caracteres, com letras maiúsculas, minúsculas, números e símbolos.</small>
+                    </div>
+
+                    <h3>Endereço</h3>
+                    <div class="input-group">
+                        <label for="register-cep">CEP:</label>
+                        <input type="text" id="register-cep" name="cep" class="input-style" placeholder="Ex: 00000-000" maxlength="9">
+                        <p id="cep-error" class="input-validation-error"></p>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-rua">Rua:</label>
+                        <input type="text" id="register-rua" name="rua" class="input-style" placeholder="Nome da Rua">
+                    </div>
+                    <div class="input-group">
+                        <label for="register-numero">Número:</label>
+                        <input type="text" id="register-numero" name="numero" class="input-style" placeholder="Nº">
+                    </div>
+                    <div class="input-group">
+                        <label for="register-bairro">Bairro:</label>
+                        <input type="text" id="register-bairro" name="bairro" class="input-style" placeholder="Seu Bairro">
+                    </div>
+                    <div class="input-group">
+                        <label for="register-cidade">Cidade:</label>
+                        <input type="text" id="register-cidade" name="cidade" class="input-style" placeholder="Sua Cidade">
+                    </div>
+                    <div class="input-group">
+                        <label for="register-estado">Estado:</label>
+                        <input type="text" id="register-estado" name="estado" class="input-style" placeholder="Seu Estado (Ex: SP)">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
+                    <button type="button" class="btn btn-secondary back-btn" data-target="login-section">Voltar ao Login</button>
+                    <p id="register-message" class="message"></p>
+                </form>
+            </section>
+
+            <section id="paciente-dashboard" class="hidden-section dashboard card">
+                <h2>Bem-vindo(a)!</h2>
+                <div class="dashboard-grid">
+                    <button class="btn btn-option" data-target="agendar-consulta-section">
+                        <i class="fas fa-calendar-alt"></i> Agendar Consulta
+                    </button>
+                    <button class="btn btn-option" data-target="minhas-consultas-section">
+                        <i class="fas fa-notes-medical"></i> Minhas Consultas
+                    </button>
+                    <button class="btn btn-option" data-target="meus-exames-guias-section">
+                        <i class="fas fa-file-prescription"></i> Meus Exames e Guias
+                    </button>
+                    <button class="btn btn-option" data-target="suporte-paciente-section">
+                        <i class="fas fa-headset"></i> Suporte
+                    </button>
+                </div>
+            </section>
+
+            <section id="agendar-consulta-section" class="hidden-section screen-section card">
+                <h2>Agendar Nova Consulta</h2>
+                <form id="agendamento-form" class="form-style">
+                    <div class="input-group">
+                        <label for="especialidade">Especialidade:</label>
+                        <select id="especialidade" name="especialidade" required class="select-style">
+                            <option value="">Selecione</option>
+                            </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="medico">Médico:</label>
+                        <select id="medico" name="medico" required disabled class="select-style">
+                            <option value="">Selecione a especialidade primeiro</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="data-consulta">Data:</label>
+                        <input type="date" id="data-consulta" name="data-consulta" required class="input-style">
+                    </div>
+                    <div class="input-group">
+                        <label for="hora-consulta">Hora:</label>
+                        <input type="time" id="hora-consulta" name="hora-consulta" required class="input-style">
+                    </div>
+                    <div class="input-group">
+                        <label for="motivo-consulta">Motivo da Consulta:</label>
+                        <textarea id="motivo-consulta" name="motivo-consulta" rows="3" class="textarea-style"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Confirmar Agendamento</button>
+                    <button type="button" class="btn btn-secondary back-btn" data-target="paciente-dashboard">Voltar</button>
+                    <p id="agendamento-message" class="message success-message"></p>
+                </form>
+            </section>
+
+            <section id="minhas-consultas-section" class="hidden-section screen-section card">
+                <h2>Minhas Consultas</h2>
+                <div id="lista-consultas" class="list-container">
+                    <p>Nenhuma consulta agendada ainda.</p>
+                </div>
+                <button type="button" class="btn btn-secondary back-btn" data-target="paciente-dashboard">Voltar</button>
+            </section>
+
+            <section id="meus-exames-guias-section" class="hidden-section screen-section card">
+                <h2>Meus Exames e Guias</h2>
+                <div id="lista-exames-guias" class="list-container">
+                    <p>Nenhum exame ou guia disponível.</p>
+                </div>
+                <button type="button" class="btn btn-secondary back-btn" data-target="paciente-dashboard">Voltar</button>
+            </section>
+
+            <section id="suporte-paciente-section" class="hidden-section screen-section card">
+                <h2>Suporte ao Paciente</h2>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot-message">Olá! Como posso ajudar você hoje?</div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="Digite sua mensagem..." class="input-style">
+                        <button id="send-chat-btn" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+                <p class="text-muted mt-2">Para suporte humano, ligue para (11) 4002-8922.</p>
+                <button type="button" class="btn btn-secondary back-btn" data-target="paciente-dashboard">Voltar</button>
+            </section>
+
+            <section id="medico-dashboard" class="hidden-section dashboard card">
+                <h2>Painel do Médico</h2>
+                <div class="dashboard-grid">
+                    <button class="btn btn-option" data-target="consultar-pacientes-section">
+                        <i class="fas fa-user-injured"></i> Consultar Pacientes
+                    </button>
+                    <button class="btn btn-option" data-target="minha-agenda-section">
+                        <i class="fas fa-calendar-check"></i> Minha Agenda
+                    </button>
+                    <button class="btn btn-option" data-target="liberar-guias-section">
+                        <i class="fas fa-prescription-bottle-alt"></i> Liberar Guias
+                    </button>
+                    <button class="btn btn-option" data-target="acessar-prontuarios-section">
+                        <i class="fas fa-file-medical"></i> Prontuários
+                    </button>
+                </div>
+            </section>
+
+            <section id="consultar-pacientes-section" class="hidden-section screen-section card">
+                <h2>Consultar Pacientes</h2>
+                <div class="search-bar">
+                    <input type="text" id="search-paciente-input" placeholder="Buscar paciente por nome ou CPF..." class="input-style">
+                    <button id="search-paciente-btn" class="btn btn-info">Buscar</button>
+                </div>
+                <div id="lista-pacientes-medico" class="list-container">
+                    <p>Nenhum paciente encontrado.</p>
+                </div>
+                <button type="button" class="btn btn-secondary back-btn" data-target="medico-dashboard">Voltar</button>
+            </section>
+
+            <section id="minha-agenda-section" class="hidden-section screen-section card">
+                <h2>Minha Agenda</h2>
+                <div id="agenda-medico" class="list-container">
+                    <p>Nenhum compromisso para hoje.</p>
+                </div>
+                <button type="button" class="btn btn-secondary back-btn" data-target="medico-dashboard">Voltar</button>
+            </section>
+
+            <section id="liberar-guias-section" class="hidden-section screen-section card">
+                <h2>Liberar Guias</h2>
+                <form id="liberar-guia-form" class="form-style">
+                    <div class="input-group">
+                        <label for="guia-paciente-select">Paciente:</label>
+                        <select id="guia-paciente-select" name="guia-paciente" required class="select-style">
+                            <option value="">Selecione o paciente</option>
+                            </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="guia-descricao">Descrição da Guia:</label>
+                        <textarea id="guia-descricao" name="guia-descricao" rows="3" required class="textarea-style"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="guia-data-emissao">Data de Emissão:</label>
+                        <input type="date" id="guia-data-emissao" name="guia-data-emissao" required class="input-style">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Emitir Guia</button>
+                    <button type="button" class="btn btn-secondary back-btn" data-target="medico-dashboard">Voltar</button>
+                    <p id="liberar-guia-message" class="message success-message"></p>
+                </form>
+            </section>
+
+            <section id="acessar-prontuarios-section" class="hidden-section screen-section card">
+                <h2>Acessar Prontuários</h2>
+                <div class="search-bar">
+                    <input type="text" id="search-prontuario-input" placeholder="Buscar prontuário por CPF do paciente..." class="input-style">
+                    <button id="search-prontuario-btn" class="btn btn-info">Buscar</button>
+                </div>
+                <div id="prontuario-details">
+                    <p>Nenhum prontuário selecionado ou encontrado.</p>
+                </div>
+                <button type="button" class="btn btn-secondary back-btn" data-target="medico-dashboard">Voltar</button>
+            </section>
+
+
+            <section id="administrador-dashboard" class="hidden-section dashboard card">
+                <h2>Painel do Administrador</h2>
+                <div class="dashboard-grid">
+                    <button class="btn btn-option" data-target="register-section" data-register-role="medico">
+                        <i class="fas fa-user-md"></i> Cadastrar Médico
+                    </button>
+                    <button class="btn btn-option" data-target="cadastrar-vacina-section">
+                        <i class="fas fa-syringe"></i> Cadastrar Vacina
+                    </button>
+                    <button class="btn btn-option" data-target="gerenciar-suporte-section">
+                        <i class="fas fa-ticket-alt"></i> Gerenciar Suporte
+                    </button>
+                    <button class="btn btn-option">
+                        <i class="fas fa-clipboard-list"></i> Logs do Sistema
+                    </button>
+                </div>
+            </section>
+
+            <section id="cadastrar-vacina-section" class="hidden-section screen-section card">
+                <h2>Cadastrar Nova Vacina</h2>
+                <form id="cadastrar-vacina-form" class="form-style">
+                    <div class="input-group">
+                        <label for="vacina-nome">Nome da Vacina:</label>
+                        <input type="text" id="vacina-nome" name="nome" required class="input-style">
+                    </div>
+                    <div class="input-group">
+                        <label for="vacina-descricao">Descrição:</label>
+                        <textarea id="vacina-descricao" name="descricao" rows="3" class="textarea-style"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="vacina-lote">Lote:</label>
+                        <input type="text" id="vacina-lote" name="lote" class="input-style">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar Vacina</button>
+                    <button type="button" class="btn btn-secondary back-btn" data-target="administrador-dashboard">Voltar</button>
+                    <p id="cadastro-vacina-message" class="message success-message"></p>
+                </form>
+            </section>
+
+            <section id="gerenciar-suporte-section" class="hidden-section screen-section card">
+                <h2>Gerenciar Suporte</h2>
+                <div id="solicitacoes-suporte" class="list-container">
+                    <p>Nenhuma solicitação de suporte pendente.</p>
+                </div>
+                <button type="button" class="btn btn-secondary back-btn" data-target="administrador-dashboard">Voltar</button>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>&copy; 2025 SaúdeOn. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
