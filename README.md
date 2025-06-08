@@ -96,18 +96,18 @@ Utilize as seguintes credenciais para testar as diferentes personas:
 
 O projeto utiliza um conjunto de cores e fontes estrategicamente selecionadas para uma interface agradável e profissional:
 
-### Cores (Variáveis CSS em `style.css`)
+### Cores (variáveis CSS em `style.css`)
 As cores são definidas no `:root` do `style.css` para fácil manutenção:
-* `--primary-color`: `#28a745` (Verde Vibrante)
-* `--secondary-color`: `#007bff` (Azul)
-* `--accent-color`: `#ffc107` (Amarelo de Destaque)
-* `--text-color`: `#333` (Cinza Escuro para Texto)
-* `--background-color`: `#e9ecef` (Cinza Claro para Fundo)
-* `--card-background`: `#ffffff` (Branco para Cards/Seções)
+* `--primary-color`: `#28a745` (verde vibrante)
+* `--secondary-color`: `#007bff` (azul)
+* `--accent-color`: `#ffc107` (amarelo)
+* `--text-color`: `#333` (cinza escuro para texto)
+* `--background-color`: `#e9ecef` (Cinza claro para fundo)
+* `--card-background`: `#ffffff` (branco para cards/seções)
 
 ### Tipografia
-* **Corpo do Texto e Elementos Gerais:** `'Open Sans'`, sans-serif
-* **Títulos e Logo (`SaúdeOn`):** `'Montserrat'`, sans-serif
+* **Corpo do texto e elementos gerais:** `'Open Sans'`, sans-serif
+* **Títulos e logo (`SaúdeOn`):** `'Montserrat'`, sans-serif
 
 
 ## ⚠️ Observações importantes
